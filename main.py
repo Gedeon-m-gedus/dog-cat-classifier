@@ -117,9 +117,6 @@ def test(model, perm=torch.arange(0, 636*636*3).long()):
         accuracy))
 
 
-
-
-
 # Training settings 
 n_features = 8 # hyperparameter
 
@@ -128,6 +125,7 @@ optimizer = optim.SGD(model_cnn.parameters(), lr=0.01, momentum=0.5)
 print('Number of parameters: {}'.format(get_n_params(model_cnn)))
 
 def mywork():
+    print('Training a 2 layers CNN')
     for epoch in range(0, 1):
         train(epoch, model_cnn)
         test(model_cnn)
@@ -137,12 +135,13 @@ optimizer = optim.SGD(model_cnn.parameters(), lr=0.01, momentum=0.5)
 print('Number of parameters: {}'.format(get_n_params(model_cnn)))
 
 def myDEEPwork():
+    print('Training a 4 layers CNN')
     for epoch in range(0, 1):
         train(epoch, model_cnn)
         test(model_cnn)
 
 if __name__ == "__main__":
-    mywork()
+    #mywork()
     myDEEPwork()
 
 
