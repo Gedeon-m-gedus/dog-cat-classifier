@@ -141,7 +141,7 @@ def myDEEPwork():
         test(model_cnn)
 
 if __name__ == "__main__":
-    #mywork()
+    mywork()
     myDEEPwork()
 
 
