@@ -13,6 +13,7 @@ from PIL import Image
 from torch.utils.data import DataLoader
 from dataset import datasetloader
 from model import CNN
+from model import deep_CNN
 
 
 #function to count number of parameters
@@ -23,7 +24,7 @@ def get_n_params(model):
     return np
 
 
-input_size  = 224*224*3   # images are 224*224 pixels and has 3 channels because of RGB color
+input_size  = 636*636*3   # images are 224*224 pixels and has 3 channels because of RGB color
 output_size = 2      # there are 2 classes---Cat and dog
 
 # number of subprocesses to use for data loading
@@ -52,7 +53,7 @@ test_transforms = transforms.Compose([transforms.RandomResizedCrop(size=256, sca
                                     transforms.ToTensor()])
                                    
 
-image_size = (224, 224)
+image_size = (636, 636)
 image_row_size = image_size[0] * image_size[1]
 
 
@@ -97,7 +98,7 @@ def train(epoch, model):
                 epoch, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader), loss.item()))
             
-def test(model, perm=torch.arange(0, 224*224*3).long()):
+def test(model, perm=torch.arange(0, 636*636*3).long()):
     model.eval()
     test_loss = 0
     correct = 0
@@ -131,6 +132,17 @@ def mywork():
         train(epoch, model_cnn)
         test(model_cnn)
 
+model_cnn = deep_CNN(input_size, n_features, output_size)
+optimizer = optim.SGD(model_cnn.parameters(), lr=0.01, momentum=0.5)
+print('Number of parameters: {}'.format(get_n_params(model_cnn)))
+
+def myDEEPwork():
+    for epoch in range(0, 1):
+        train(epoch, model_cnn)
+        test(model_cnn)
+
 if __name__ == "__main__":
     mywork()
+    myDEEPwork()
+
 
