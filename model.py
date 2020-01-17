@@ -20,7 +20,7 @@ class CNN(nn.Module):
         self.conv1 = nn.Conv2d(in_channels=3, out_channels=n_feature, kernel_size=5)
         self.conv2 = nn.Conv2d(n_feature, n_feature, kernel_size=5)
         self.fc1 = nn.Linear(n_feature*156*156, 50)
-        self.fc2 = nn.Linear(50, 10)
+        self.fc2 = nn.Linear(50, 2)
         
     def forward(self, x, verbose=False):
         x = self.conv1(x)
@@ -46,7 +46,7 @@ class deep_CNN(nn.Module):
         self.conv3 = nn.Conv2d(n_feature, n_feature, kernel_size=5)
         self.conv4 = nn.Conv2d(n_feature, n_feature, kernel_size=5) 
         self.fc1 = nn.Linear(n_feature*36*36, 50)
-        self.fc2 = nn.Linear(50, 10)
+        self.fc2 = nn.Linear(50, 2)
         
     def forward(self, x, verbose=False):
         x = self.conv1(x)
