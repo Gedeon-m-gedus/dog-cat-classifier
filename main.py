@@ -130,15 +130,15 @@ def mywork():
         train(epoch, model_cnn)
         test(model_cnn)
 
-model_cnn = deep_CNN(input_size, n_features, output_size)
-optimizer = optim.SGD(model_cnn.parameters(), lr=0.01, momentum=0.5)
-print('Number of parameters: {}'.format(get_n_params(model_cnn)))
+deep_cnn = deep_CNN(input_size, n_features, output_size)
+optimizer = optim.SGD(deep_cnn.parameters(), lr=0.01, momentum=0.5)
+print('Number of parameters: {}'.format(get_n_params(deep_cnn)))
 
 def myDEEPwork():
     print('Training a 4 layers CNN')
     for epoch in range(0, 1):
-        train(epoch, model_cnn)
-        test(model_cnn)
+        train(epoch, deep_cnn)
+        test(deep_cnn)
 
 if __name__ == "__main__":
     mywork()
