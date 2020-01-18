@@ -39,19 +39,7 @@ train_dir = os.path.join(data_dir, 'train/')
 test_dir = os.path.join(data_dir, 'test/')
 
 
-#create transformers
-train_transform = transforms.Compose([transforms.RandomResizedCrop(size=256, scale=(0.8, 1.0)),
-                                    transforms.RandomRotation(degrees=15),
-                                    transforms.RandomHorizontalFlip(),
-                                    transforms.CenterCrop(size=224),
-                                    transforms.ToTensor()])
-                                    
-test_transforms = transforms.Compose([transforms.RandomResizedCrop(size=256, scale=(0.8, 1.0)),
-                                    transforms.RandomRotation(degrees=15),
-                                    transforms.RandomHorizontalFlip(),
-                                    transforms.CenterCrop(size=224),
-                                    transforms.ToTensor()])
-                                   
+
 
 image_size = (636, 636)
 image_row_size = image_size[0] * image_size[1]
