@@ -1,7 +1,7 @@
-# dog-cat-classifier
+# Dog and cat images classifier
 
 
-Steps to run the code
+### Steps to run the code
 1. Clone the code files
 - main.py
 - dataset.py
