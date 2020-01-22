@@ -12,3 +12,8 @@
 3. Run the main.py file
 
 4. I will first train a 2 layers CNN and later train a 4 layers CNN, it will print out the test accuracy in each case.
+
+# TensorBoard
+
+### Training losses
+![](images/trainig_loss.png)
