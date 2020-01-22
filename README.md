@@ -17,3 +17,9 @@
 
 ### Training losses
 ![](images/trainig_loss.png)
+
+### Main Graph
+![](images/mainGraph.png)
+
+### Projection (PCA)
+![](images/projection.png)
